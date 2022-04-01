@@ -1,6 +1,6 @@
 # blackout.nvim
 
-A dark colorscheme for neovim.
+A dark colorscheme for neovim built using [lush.nvim](https://github.com/rktjmp/lush.nvim).
 
 <!-- ![Screenshot](https://myoctocat.com/assets/images/base-octocat.svg) -->
 
