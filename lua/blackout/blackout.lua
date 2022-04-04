@@ -130,6 +130,7 @@ local theme = lush(function()
     -- Uncomment and edit if you want more specific syntax highlighting.
 
     -- Constant       { }, -- (preferred) any constant
+    Constant       { bg = c.dark1, fg = c.bright_green }, -- normal text
     -- String         { }, --   a string constant: "this is a string"
     -- Character      { }, --  a character constant: 'c', '\n'
     -- Number         { }, --   a number constant: 234, 0xff
