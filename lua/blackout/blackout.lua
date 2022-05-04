@@ -1,5 +1,5 @@
-local lush = require "lush"
-local c = require "lua.colors"
+local lush = require('lush')
+local c = require('blackout.colors')
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -18,30 +18,31 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
-    Comment      { fg = c.black1 }, -- any comment
+    Comment      { fg = c.blue1 }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
     -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn { bg = c.black }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    -- Directory    { }, -- directory names (and other special names in listings)
-    DiffAdd      { fg = c.green, bg = c.green }, -- diff mode: Added line |diff.txt|
-    DiffChange   { fg = c.blue, bg = c.blue }, -- diff mode: Changed line |diff.txt|
-    DiffDelete   { fg = c.red }, -- diff mode: Deleted line |diff.txt|
-    -- DiffText     { fg = c.blue }, -- diff mode: Changed text within a changed line |diff.txt|
-    -- EndOfBuffer  { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    Directory    { fg = c.blue }, -- directory names (and other special names in listings)
+    DiffAdd      { fg = c.green0, bg = c.black3 }, -- diff mode: Added line |diff.txt|
+    DiffChange   { fg = c.blue, bg = c.black3 }, -- diff mode: Changed line |diff.txt|
+    DiffDelete   { fg = c.red, bg = c.black3 }, -- diff mode: Deleted line |diff.txt|
+    DiffText     { bg = c.black3 }, -- diff mode: Changed text within a changed line |diff.txt|
+    EndOfBuffer  { fg = c.blue1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
-    ErrorMsg     { fg = c.red }, -- error messages on the command line
+    -- ErrorMsg     { }, -- error messages on the command line
     -- VertSplit    { }, -- the column separating vertically split windows
     -- Folded       { }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { bg = c.black }, -- column where |signs| are displayed
+    SignColumn   { bg = c.black3, fg = c.blue1 }, -- column where |signs| are displayed
     -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
-    LineNr       { fg = c.black1 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    -- LineNr       { fg = c.purple1 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr       { SignColumn }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     -- MatchParen   { }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -49,8 +50,7 @@ local theme = lush(function()
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
     -- NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    -- Normal       { bg = c.dark1, fg = c.light0_soft }, -- normal text
-    -- Normal       { bg = c.dark1, fg = c.light0_soft }, -- normal text
+    Normal       { bg = c.black2 , fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
     -- Pmenu        { }, -- Popup menu: normal item.
@@ -83,11 +83,11 @@ local theme = lush(function()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant       { fg = c.white, gui = "bold" }, -- (preferred) any constant
-    String         { fg = c.yellow }, --   a string constant: "this is a string"
+    -- Constant       { }, -- (preferred) any constant
+    -- String         { }, --   a string constant: "this is a string"
     -- Character      { }, --  a character constant: 'c', '\n'
-    Number         { fg = c.green }, --   a number constant: 234, 0xff
-    Boolean        { fg = c.purple }, --  a boolean constant: TRUE, false
+    -- Number         { }, --   a number constant: 234, 0xff
+    -- Boolean        { }, --  a boolean constant: TRUE, false
     -- Float          { }, --    a floating point constant: 2.3e10
 
     -- Identifier     { }, -- (preferred) any variable name
@@ -98,7 +98,7 @@ local theme = lush(function()
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.
     -- Operator       { }, -- "sizeof", "+", "*", etc.
-    -- Keyword        { }, --  any other keyword
+    Keyword        { fg = c.white0, gui = "bold" }, --  any other keyword
     -- Exception      { }, --  try, catch, throw
 
     -- PreProc        { }, -- (preferred) generic Preprocessor

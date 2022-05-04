@@ -1,10 +1,11 @@
-local hsl = require("lush.hsl")
+local lush = require('lush')
+local hsl = lush.hsl
 
 return {
     black = hsl("#2E3436"),
     black0 = hsl("#555753"),
     black1 = hsl("#888a85"),
-    -- black1 = hsl("#182227"),
+    -- black2 = hsl("#222222"),
     white = hsl("#ffffff"),
     white0 = hsl("#EEEEEC"),
     white1 = hsl("#D3D7CF"),
@@ -21,4 +22,18 @@ return {
     purple0 = hsl("#75507B"),
     cyan = hsl("#34E2E2"),
     cyan0 = hsl("#06989A"),
+
+
+    -- tumnus colors
+    black2 = hsl('#262626'), -- Normal bg
+    black3 = hsl('#121212'), -- Darkest black
+    purple1 = hsl('#5f5f87'), -- Comment fg
+    green1 = hsl('#87875f'), -- String fg
+    purple2 = hsl('#875f5f'), -- PreProc fg
+
+    -- Eclipse Pastel colors
+    brown = hsl('#a57b61'), 
+    blue1 = hsl('#7D8C93'),
+
 }
+
