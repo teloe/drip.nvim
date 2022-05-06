@@ -35,5 +35,9 @@ return {
     brown = hsl('#a57b61'), 
     blue1 = hsl('#7D8C93'),
 
+    -- Random
+    green2 = hsl("#439641"),
+    orange = hsl('#F2A93B')
+
 }
 
