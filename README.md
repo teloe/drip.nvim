@@ -1,10 +1,10 @@
-<h1 align="center">drip.nvim</h1>
-
-<p align="center">A dark colorscheme for neovim built using <a href="https://github.com/rktjmp/lush.nvim">lush.nvim</a>.</p>
-
 <p align="center">
     <img src="https://user-images.githubusercontent.com/26290165/167910605-7ec451a3-bf39-4a5b-ae94-c2dc69707a12.svg" width="40" />
 </p>
+
+# drip.nvim
+
+A dark colorscheme for neovim built using [lush.nvim](https://github.com/rktjmp/lush.nvim)
 
 ## Installation
 
