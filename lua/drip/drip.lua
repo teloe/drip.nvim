@@ -1,5 +1,5 @@
 local lush = require('lush')
-local c = require('blackout.colors')
+local c = require('drip.colors')
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -18,7 +18,7 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
-    Comment      { fg = c.blue1 }, -- any comment
+    Comment      { fg = c.purple1 }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
@@ -31,7 +31,7 @@ local theme = lush(function()
     DiffChange   { fg = c.blue }, -- diff mode: Changed line |diff.txt|
     DiffDelete   { fg = c.red }, -- diff mode: Deleted line |diff.txt|
     -- DiffText     { bg = c.black3 }, -- diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer  { fg = c.blue1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    EndOfBuffer  { fg = c.purple1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     -- ErrorMsg     { }, -- error messages on the command line
@@ -41,20 +41,20 @@ local theme = lush(function()
     SignColumn   { fg = c.blue1 }, -- column where |signs| are displayed
     -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
-    LineNr       { fg = c.purple1 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr       { Comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNr       { fg = c.black0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen   { bg = c.black }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen   { bg = c.blue2 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
     NonText      { fg = c.black }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal       { bg = c.black2 , fg = c.white1  }, -- normal text
+    Normal       { bg = c.blue4 , fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    -- Pmenu        { }, -- Popup menu: normal item.
-    -- PmenuSel     { }, -- Popup menu: selected item.
+    Pmenu        { bg = c.black }, -- Popup menu: normal item.
+    PmenuSel     { bg = c.blue2 }, -- Popup menu: selected item.
     -- PmenuSbar    { }, -- Popup menu: scrollbar.
     -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
@@ -71,7 +71,7 @@ local theme = lush(function()
     -- TabLineFill  { }, -- tab pages line, where there are no labels
     -- TabLineSel   { }, -- tab pages line, active tab page label
     Title        { fg = c.white, gui = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
-    -- Visual       { }, -- Visual mode selection
+    Visual       { bg = c.blue2 }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     -- WarningMsg   { }, -- warning messages
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
@@ -83,17 +83,17 @@ local theme = lush(function()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant       { fg = c.brown }, -- (preferred) any constant
-    String         { fg = c.green1 }, --   a string constant: "this is a string"
+    Constant       { fg = c.green1 }, -- (preferred) any constant
+    String         { fg = c.brown }, --   a string constant: "this is a string"
     Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
-    Number         { fg = c.red }, --   a number constant: 234, 0xff
+    Number         { fg = c.purple }, --   a number constant: 234, 0xff
     Boolean        { fg = c.purple }, --  a boolean constant: TRUE, false
     Float          { fg = c.blue1 }, --    a floating point constant: 2.3e10
 
-    -- Identifier     { }, -- (preferred) any variable name
+    Identifier     { fg = c.black1 }, -- (preferred) any variable name
     Function       { fg = c.white }, -- function name (also: methods for classes)
 
-    Statement      { fg = c.white0 }, -- (preferred) any statement
+    Statement      { fg = c.blue3 }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.
@@ -107,12 +107,12 @@ local theme = lush(function()
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    -- Type           { fg = c.green2, gui = "bold" }, -- (preferred) int, long, char, etc.
+    -- Type           { fg = c.black1, gui = "bold" }, -- (preferred) int, long, char, etc.
     -- StorageClass   { }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
-    -- Special        { }, -- (preferred) any special symbol
+    Special        { fg = c.white0 }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     Delimiter      { fg = c.blue1 }, --  character that needs attention

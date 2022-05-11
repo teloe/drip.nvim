@@ -11,7 +11,7 @@ return {
     white1 = hsl("#D3D7CF"),
     red = hsl("#EF2929"),
     red0 = hsl("#CC0000"),
-    red1 = hsl("#f0f0f0"),
+    -- red1 = hsl("#f0f0f0"),
     green = hsl("#8AE234"),
     green0 = hsl("#4E9A06"),
     yellow = hsl("#FCE94F"),
@@ -30,14 +30,25 @@ return {
     purple1 = hsl('#5f5f87'), -- Comment fg
     green1 = hsl('#87875f'), -- String fg
     purple2 = hsl('#875f5f'), -- PreProc fg
+    cyan1 = hsl('#87afaf'),
+    blue3 = hsl('#5f87af'),
+
+    -- nord
+    yellow1 = hsl('#EBCB8B'),
 
     -- Eclipse Pastel colors
     brown = hsl('#a57b61'), 
     blue1 = hsl('#7D8C93'),
+    blue2 = hsl('#2D4363'),
+
+    -- mustang
+    blue3 = hsl('#7E8AA2');
+    
 
     -- Random
     green2 = hsl("#439641"),
-    orange = hsl('#F2A93B')
+    orange = hsl('#F2A93B'),
+    blue4 =  hsl('#273136'),
 
 }
 
