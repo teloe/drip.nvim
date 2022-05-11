@@ -48,7 +48,11 @@ return {
     -- Random
     green2 = hsl("#439641"),
     orange = hsl('#F2A93B'),
+
+    -- Matcha
     blue4 =  hsl('#273136'),
+    blue5 =  hsl('#1C2427'),
+    blue6 =  hsl('#323E45'),
 
 }
 

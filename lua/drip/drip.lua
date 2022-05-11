@@ -53,7 +53,7 @@ local theme = lush(function()
     Normal       { bg = c.blue4 , fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { bg = c.black }, -- Popup menu: normal item.
+    Pmenu        { bg = c.blue6 }, -- Popup menu: normal item.
     PmenuSel     { bg = c.blue2 }, -- Popup menu: selected item.
     -- PmenuSbar    { }, -- Popup menu: scrollbar.
     -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
@@ -84,7 +84,7 @@ local theme = lush(function()
     -- Uncomment and edit if you want more specific syntax highlighting.
 
     Constant       { fg = c.green1 }, -- (preferred) any constant
-    String         { fg = c.brown }, --   a string constant: "this is a string"
+    String         { fg = c.green1 }, --   a string constant: "this is a string"
     Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
     Number         { fg = c.purple }, --   a number constant: 234, 0xff
     Boolean        { fg = c.purple }, --  a boolean constant: TRUE, false
