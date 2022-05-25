@@ -18,6 +18,26 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
+
+    -- NvimTree
+    -- NvimTreeRootFolder                     = { fg = c.blue3, bg = c.gray },
+    -- NvimTreeFolderName                     = { fg = p.s6 },
+    -- NvimTreeFolderIcon                     = { fg = c.blue3 },
+    -- NvimTreeEmptyFolderName                = {},
+    -- NvimTreeOpenedFolderName               = { fg = p.fg },
+    -- NvimTreeIndentMarker                   = { fg = p.darkerblue },
+    -- NvimTreeGitDirty                       = { fg = p.red },
+    -- NvimTreeGitNew                         = { fg = p.red },
+    -- NvimTreeGitStaged                      = { fg = p.green },
+    -- NvimTreeGitDeleted                     = { fg = p.red },
+    -- NvimTreeOpenedFile                     = {},
+    -- NvimTreeImageFile                      = { fg = p.green },
+    -- NvimTreeMarkdownFile                   = { fg = p.sky },
+    -- NvimTreeExecFile                       = { fg = p.green },
+    -- NvimTreeSpecialFile                    = { fg = p.sky },
+
+
+
     Comment      { fg = c.purple1 }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -26,40 +46,41 @@ local theme = lush(function()
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
     -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    Directory    { fg = c.white1, gui = "bold" }, -- directory names (and other special names in listings)
-    DiffAdd      { fg = c.green0 }, -- diff mode: Added line |diff.txt|
-    DiffChange   { fg = c.blue }, -- diff mode: Changed line |diff.txt|
-    DiffDelete   { fg = c.red }, -- diff mode: Deleted line |diff.txt|
+    Directory    { fg = c.gray }, -- directory names (and other special names in listings)
+    -- DiffAdd      { fg = c.green0 }, -- diff mode: Added line |diff.txt|
+    -- DiffChange   { fg = c.blue }, -- diff mode: Changed line |diff.txt|
+    -- DiffDelete   { fg = c.red }, -- diff mode: Deleted line |diff.txt|
     -- DiffText     { bg = c.black3 }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer  { fg = c.purple1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
-    -- ErrorMsg     { }, -- error messages on the command line
+    ErrorMsg     { fg = c.red4 }, -- error messages on the command line
     -- VertSplit    { }, -- the column separating vertically split windows
-    -- Folded       { }, -- line used for closed folds
+    Folded       { bg = c.black3, fg = c.purple1 }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { fg = c.blue1 }, -- column where |signs| are displayed
-    -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    SignColumn   { }, -- column where |signs| are displayed
+    IncSearch    { bg = c.yellow }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
-    LineNr       { Comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    -- LineNr       { fg = c.black }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr       { fg = '#40484c' }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNr       { fg = c.black0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen   { bg = c.blue2 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen   { bg = c.darkblue1 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
-    NonText      { fg = c.black }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal       { bg = c.blue4 , fg = c.white1  }, -- normal text
+    NonText      { fg = c.black1 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    Normal       { bg = c.black2, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { bg = c.blue6 }, -- Popup menu: normal item.
-    PmenuSel     { bg = c.blue2 }, -- Popup menu: selected item.
+    Pmenu        { bg = c.black3 }, -- Popup menu: normal item.
+    PmenuSel     { bg = c.blue4 }, -- Popup menu: selected item.
     -- PmenuSbar    { }, -- Popup menu: scrollbar.
     -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    -- Search       { }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search       { bg = c.darkblue1 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     -- SpecialKey   { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     -- SpellBad     { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
     -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -71,51 +92,49 @@ local theme = lush(function()
     -- TabLineFill  { }, -- tab pages line, where there are no labels
     -- TabLineSel   { }, -- tab pages line, active tab page label
     Title        { fg = c.white, gui = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
-    Visual       { bg = c.blue2 }, -- Visual mode selection
+    Visual       { bg = c.blue4 }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     -- WarningMsg   { }, -- warning messages
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
-    -- These groups are not listed as default vim groups,
-    -- but they are defacto standard group names for syntax highlighting.
-    -- commented out groups should chain up to their "preferred" group by
-    -- default,
-    -- Uncomment and edit if you want more specific syntax highlighting.
+    Constant       { fg =  c.blue6 }, -- (preferred) any constant
+    String         { fg = c.purple3 }, --   a string constant: "this is a string"
+    -- Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
+    Number         { fg = c.green }, --   a number constant: 234, 0xff
+    Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
+    -- Float          { fg = c.yellow0 }, --    a floating point constant: 2.3e10
 
-    Constant       { fg = c.green1 }, -- (preferred) any constant
-    String         { fg = c.green1 }, --   a string constant: "this is a string"
-    Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
-    Number         { fg = c.purple }, --   a number constant: 234, 0xff
-    Boolean        { fg = c.purple }, --  a boolean constant: TRUE, false
-    Float          { fg = c.blue1 }, --    a floating point constant: 2.3e10
-
-    Identifier     { fg = c.black1 }, -- (preferred) any variable name
+    Identifier     { fg = c.cyan1 }, -- (preferred) any variable name
     Function       { fg = c.white }, -- function name (also: methods for classes)
 
-    Statement      { fg = c.blue3 }, -- (preferred) any statement
+    -- Statement      { fg = c.gray }, -- (preferred) any statement
+    Statement      { fg = "#616161", gui = "bold" }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.
-    -- Operator       { }, -- "sizeof", "+", "*", etc.
-    Keyword        { fg = c.white0, gui = "bold" }, --  any other keyword
+    -- Operator       { fg = c.yellow }, -- "sizeof", "+", "*", etc.
+    Keyword        {  fg = '#7D7D69', gui = "bold" }, --  any other keyword
     -- Exception      { }, --  try, catch, throw
 
-    PreProc        { fg = c.purple }, -- (preferred) generic Preprocessor
+    PreProc        { fg = c.purple3 }, -- (preferred) generic Preprocessor
     -- Include        { }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    -- Type           { fg = c.black1, gui = "bold" }, -- (preferred) int, long, char, etc.
-    -- StorageClass   { }, -- static, register, volatile, etc.
+    Type           { fg = c.cyan1 }, -- (preferred) int, long, char, etc.
+    -- StorageClass   { Type }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
-    Special        { fg = c.white0 }, -- (preferred) any special symbol
+    -- Special        { fg = c.purple2 }, -- (preferred) any special symbol
+    -- Special        { Statement }, -- (preferred) any special symbol
+    Special        {  fg = '#7D7D69', gui = "bold"  }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
-    Delimiter      { fg = c.blue1 }, --  character that needs attention
+    -- Delimiter      { fg = c.gray }, --  character that needs attention
+    Delimiter      { fg = '#7D7D69' },
     -- SpecialComment { }, -- special things inside a comment
     -- Debug          { }, --    debugging statements
 
@@ -145,10 +164,10 @@ local theme = lush(function()
 
     -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
     --
-    -- DiagnosticError            { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticError            { ErrorMsg } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticWarn             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticHint             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticHint             { fg = c.green5 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
@@ -194,7 +213,7 @@ local theme = lush(function()
     -- TSNamespace          { } , -- Identifiers referring to modules and namespaces.
     -- TSNone               { } , -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
     -- TSNumber             { } , -- Numeric literals that don't fit into other categories.
-    -- TSOperator           { } , -- Binary or unary operators: `+`, and also `->` and `*` in C.
+    TSOperator           { fg = c.white } , -- Binary or unary operators: `+`, and also `->` and `*` in C.
     -- TSParameter          { } , -- Parameters of a function.
     -- TSParameterReference { } , -- References to parameters of a function.
     -- TSProperty           { } , -- Same as `TSField`.
