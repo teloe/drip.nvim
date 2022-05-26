@@ -38,7 +38,7 @@ local theme = lush(function()
 
 
 
-    Comment      { fg = c.purple1 }, -- any comment
+    Comment      { fg = '#40484c' }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
@@ -46,7 +46,7 @@ local theme = lush(function()
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
     -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    Directory    { fg = c.gray }, -- directory names (and other special names in listings)
+    Directory    { fg = c.gray, gui = "bold" }, -- directory names (and other special names in listings)
     -- DiffAdd      { fg = c.green0 }, -- diff mode: Added line |diff.txt|
     -- DiffChange   { fg = c.blue }, -- diff mode: Changed line |diff.txt|
     -- DiffDelete   { fg = c.red }, -- diff mode: Deleted line |diff.txt|
@@ -70,8 +70,9 @@ local theme = lush(function()
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
-    NonText      { fg = c.black1 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal       { bg = c.black2, fg = c.white1  }, -- normal text
+    NonText      { fg = c.black.da(25) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    Normal       { bg = '#1B2029', fg = c.white1  }, -- normal text
+    -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
     Pmenu        { bg = c.black3 }, -- Popup menu: normal item.
@@ -81,7 +82,7 @@ local theme = lush(function()
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { bg = c.darkblue1 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-    -- SpecialKey   { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+    SpecialKey   { fg = c.black }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     -- SpellBad     { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
     -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
@@ -98,39 +99,40 @@ local theme = lush(function()
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
-    Constant       { fg =  c.blue6 }, -- (preferred) any constant
-    String         { fg = c.purple3 }, --   a string constant: "this is a string"
+    Constant       { fg =  c.black0 }, -- (preferred) any constant
+    String         { fg = c.brown0 }, --   a string constant: "this is a string"
     -- Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
     Number         { fg = c.green }, --   a number constant: 234, 0xff
     Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
     -- Float          { fg = c.yellow0 }, --    a floating point constant: 2.3e10
 
     Identifier     { fg = c.cyan1 }, -- (preferred) any variable name
-    Function       { fg = c.white }, -- function name (also: methods for classes)
+    Function       { fg = c.white1 }, -- function name (also: methods for classes)
 
-    -- Statement      { fg = c.gray }, -- (preferred) any statement
+    -- Statement      { fg = c.black0 }, -- (preferred) any statement
     Statement      { fg = "#616161", gui = "bold" }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.
     -- Operator       { fg = c.yellow }, -- "sizeof", "+", "*", etc.
-    Keyword        {  fg = '#7D7D69', gui = "bold" }, --  any other keyword
+    -- Keyword        {  fg = '#7D7D69', gui = "bold" }, --  any other keyword
+    Keyword        {  fg = c.white1, gui = "bold" }, --  any other keyword
     -- Exception      { }, --  try, catch, throw
 
-    PreProc        { fg = c.purple3 }, -- (preferred) generic Preprocessor
+    PreProc        { fg = c.brown0 }, -- (preferred) generic Preprocessor
     -- Include        { }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c.cyan1 }, -- (preferred) int, long, char, etc.
+    Type           { fg = c.darkblue }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
-    -- Special        { fg = c.purple2 }, -- (preferred) any special symbol
-    -- Special        { Statement }, -- (preferred) any special symbol
-    Special        {  fg = '#7D7D69', gui = "bold"  }, -- (preferred) any special symbol
+    -- Special        { fg = c.green5, gui = "bold" }, -- (preferred) any special symbol
+    Special        { Statement }, -- (preferred) any special symbol
+    -- Special        {  fg = '#7D7D69', gui = "bold"  }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     -- Delimiter      { fg = c.gray }, --  character that needs attention

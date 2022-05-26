@@ -38,6 +38,7 @@ return {
 
     -- Eclipse Pastel colors
     brown = hsl('#a57b61'), 
+    brown0 = '#93746F',
     blue1 = hsl('#7D8C93'),
     -- green3 = hsl('#617471'),
     blue2 = hsl('#2D4363'),
@@ -71,5 +72,8 @@ return {
 
     -- apprentice
     green4 = '#5F8787',
+
+    -- darkeclipse 
+    blue8 = '#101520',
 
 }
