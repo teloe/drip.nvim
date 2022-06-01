@@ -17,7 +17,7 @@ return {
     -- yellow = hsl("#FCE94F"),
     yellow0 = hsl("#C4A000"),
     blue = hsl("#729FCF"),
-    blue0 = hsl("#3465A4"),
+    blue0 = hsl("#506090"),
     purple = hsl("#AD7FA8"),
     purple0 = hsl("#75507B"),
     cyan = hsl("#34E2E2"),
@@ -43,6 +43,7 @@ return {
     -- green3 = hsl('#617471'),
     blue2 = hsl('#2D4363'),
     purple3 = hsl('#82677E'),
+    purple4 = '#595980',
 
     -- mustang
     blue3 = hsl('#7E8AA2');
@@ -70,10 +71,12 @@ return {
     sky = '#94d1c7',
     gray = '#778377',
 
-    -- apprentice
-    green4 = '#5F8787',
-
     -- darkeclipse 
     blue8 = '#101520',
+    blue9 = '#576B80',
+
+    red5 = '#C56C6C',
+    purple5 = '#9474a9',
+    yellow2 = '#E2E060',
 
 }

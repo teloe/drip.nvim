@@ -38,7 +38,8 @@ local theme = lush(function()
 
 
 
-    Comment      { fg = '#40484c' }, -- any comment
+    Comment      { fg = '#586469' }, -- any comment
+    -- Comment      { fg = c.blue1 }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
@@ -46,7 +47,7 @@ local theme = lush(function()
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
     -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    Directory    { fg = c.gray, gui = "bold" }, -- directory names (and other special names in listings)
+    Directory    { fg = c.black1, gui = "bold" }, -- directory names (and other special names in listings)
     -- DiffAdd      { fg = c.green0 }, -- diff mode: Added line |diff.txt|
     -- DiffChange   { fg = c.blue }, -- diff mode: Changed line |diff.txt|
     -- DiffDelete   { fg = c.red }, -- diff mode: Deleted line |diff.txt|
@@ -58,11 +59,11 @@ local theme = lush(function()
     -- VertSplit    { }, -- the column separating vertically split windows
     Folded       { bg = c.black3, fg = c.purple1 }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { }, -- column where |signs| are displayed
-    IncSearch    { bg = c.yellow }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    SignColumn   { fg = c.blue0 }, -- column where |signs| are displayed
+    IncSearch    { bg = c.blue2 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- LineNr       { fg = c.black }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    LineNr       { fg = '#40484c' }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr       { Comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNr       { fg = c.black0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { bg = c.darkblue1 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -70,15 +71,16 @@ local theme = lush(function()
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
-    NonText      { fg = c.black.da(25) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal       { bg = '#1B2029', fg = c.white1  }, -- normal text
+    NonText      { fg = c.black0.da(35) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    -- Normal       { bg = '#1a202a', fg = c.white1  }, -- normal text
+    Normal       { bg = '#2a2a2a', fg = c.white1  }, -- normal text
     -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
     Pmenu        { bg = c.black3 }, -- Popup menu: normal item.
     PmenuSel     { bg = c.blue4 }, -- Popup menu: selected item.
-    -- PmenuSbar    { }, -- Popup menu: scrollbar.
-    -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
+    PmenuSbar    { bg = c.black }, -- Popup menu: scrollbar.
+    PmenuThumb   { fg = c.blue0 }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { bg = c.darkblue1 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
@@ -88,7 +90,7 @@ local theme = lush(function()
     -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     -- StatusLine   { }, -- status line of current window
-    -- StatusLineNC { }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    StatusLineNC { fg = c.blue0 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     -- TabLine      { }, -- tab pages line, not active tab page label
     -- TabLineFill  { }, -- tab pages line, where there are no labels
     -- TabLineSel   { }, -- tab pages line, active tab page label
@@ -100,7 +102,8 @@ local theme = lush(function()
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
     Constant       { fg =  c.black0 }, -- (preferred) any constant
-    String         { fg = c.brown0 }, --   a string constant: "this is a string"
+    String         { fg = c.purple3 }, --   a string constant: "this is a string"
+    -- String         { fg = c.green }, --   a string constant: "this is a string"
     -- Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
     Number         { fg = c.green }, --   a number constant: 234, 0xff
     Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
@@ -109,15 +112,15 @@ local theme = lush(function()
     Identifier     { fg = c.cyan1 }, -- (preferred) any variable name
     Function       { fg = c.white1 }, -- function name (also: methods for classes)
 
-    -- Statement      { fg = c.black0 }, -- (preferred) any statement
-    Statement      { fg = "#616161", gui = "bold" }, -- (preferred) any statement
+    -- Statement      { fg = c.brown0, gui = "bold" }, -- (preferred) any statement
+    Statement      { fg = "#757575", gui = "bold" }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.
     -- Operator       { fg = c.yellow }, -- "sizeof", "+", "*", etc.
     -- Keyword        {  fg = '#7D7D69', gui = "bold" }, --  any other keyword
     Keyword        {  fg = c.white1, gui = "bold" }, --  any other keyword
-    -- Exception      { }, --  try, catch, throw
+    Exception      { fg = c.blue9 }, --  try, catch, throw
 
     PreProc        { fg = c.brown0 }, -- (preferred) generic Preprocessor
     -- Include        { }, --  preprocessor #include
@@ -125,22 +128,26 @@ local theme = lush(function()
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c.darkblue }, -- (preferred) int, long, char, etc.
+    Type           { fg = c.cyan1 }, -- (preferred) int, long, char, etc.
+    -- Type           { fg = '#576B80' }, -- (preferred) int, long, char, etc.
+    -- Type           { fg = c.white1 }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
-    -- Special        { fg = c.green5, gui = "bold" }, -- (preferred) any special symbol
+    -- Special        { fg = c.green0, gui = "bold" }, -- (preferred) any special symbol
     Special        { Statement }, -- (preferred) any special symbol
     -- Special        {  fg = '#7D7D69', gui = "bold"  }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
-    -- Delimiter      { fg = c.gray }, --  character that needs attention
-    Delimiter      { fg = '#7D7D69' },
+    Delimiter      { fg = c.blue9 }, --  character that needs attention
+    -- Delimiter      { fg = '#7D7D69' },
     -- SpecialComment { }, -- special things inside a comment
     -- Debug          { }, --    debugging statements
+    htmlTag          { Delimiter }, --    debugging statements
+    htmlEndTag       { Delimiter }, --    debugging statements
 
-    -- Underlined { gui = "underline" }, -- (preferred) text that stands out, HTML links
+    Underlined { fg = c.blue9, gui = "underline" }, -- (preferred) text that stands out, HTML links
     -- Bold       { gui = "bold" },
     -- Italic     { gui = "italic" },
 
@@ -167,8 +174,8 @@ local theme = lush(function()
     -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
     --
     DiagnosticError            { ErrorMsg } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticWarn             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticWarn             { fg = c.blue9 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticHint             { fg = c.green5 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
