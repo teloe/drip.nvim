@@ -38,8 +38,8 @@ local theme = lush(function()
 
 
 
-    Comment      { fg = '#586469' }, -- any comment
-    -- Comment      { fg = c.blue1 }, -- any comment
+    -- Comment      { fg = '#586469' }, -- any comment
+    Comment      { fg = c.blue1 }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
