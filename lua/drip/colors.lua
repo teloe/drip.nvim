@@ -4,11 +4,12 @@ local hsl = lush.hsl
 return {
     black = hsl("#2E3436"),
     black0 = hsl("#555753"),
-    black1 = hsl("#888a85"),
+    black1 = hsl("#8f8f8f"),
     black4 = hsl("#2F3436"),
     white = hsl("#ffffff"),
     white0 = hsl("#EEEEEC"),
-    white1 = hsl("#D3D7CF"),
+    white1 = hsl("#d6d6d6"),
+    white2 = hsl("#C2C2C2"),
     red = hsl("#EF2929"),
     red0 = hsl("#CC0000"),
     -- red1 = hsl("#f0f0f0"),
@@ -78,5 +79,7 @@ return {
     red5 = '#C56C6C',
     purple5 = '#9474a9',
     yellow2 = '#E2E060',
+
+    black5 = '#343840',
 
 }

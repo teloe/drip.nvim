@@ -38,8 +38,8 @@ local theme = lush(function()
 
 
 
-    -- Comment      { fg = '#586469' }, -- any comment
-    Comment      { fg = c.blue1 }, -- any comment
+    Comment      { fg = '#586469' }, -- any comment
+    -- Comment      { fg = c.blue1 }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
@@ -59,7 +59,7 @@ local theme = lush(function()
     -- VertSplit    { }, -- the column separating vertically split windows
     Folded       { bg = c.black3, fg = c.purple1 }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { fg = c.blue0 }, -- column where |signs| are displayed
+    SignColumn   { fg = c.blue6 }, -- column where |signs| are displayed
     IncSearch    { bg = c.blue2 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- LineNr       { fg = c.black }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -73,62 +73,63 @@ local theme = lush(function()
     -- MoreMsg      { }, -- |more-prompt|
     NonText      { fg = c.black0.da(35) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     -- Normal       { bg = '#1a202a', fg = c.white1  }, -- normal text
-    Normal       { bg = '#2a2a2a', fg = c.white1  }, -- normal text
+    Normal       { bg = '#282c34', fg = c.white1  }, -- normal text
+    -- Normal       { bg = '#2a2a2a', fg = c.white1  }, -- normal text
     -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { bg = c.black3 }, -- Popup menu: normal item.
-    PmenuSel     { bg = c.blue4 }, -- Popup menu: selected item.
+    Pmenu        { bg = c.black5 }, -- Popup menu: normal item.
+    PmenuSel     { bg = c.darkblue1 }, -- Popup menu: selected item.
     PmenuSbar    { bg = c.black }, -- Popup menu: scrollbar.
-    PmenuThumb   { fg = c.blue0 }, -- Popup menu: Thumb of the scrollbar.
+    PmenuThumb   { fg = c.blue6 }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { bg = c.darkblue1 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-    SpecialKey   { fg = c.black }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+    SpecialKey   { fg = c.black1 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     -- SpellBad     { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
     -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     -- StatusLine   { }, -- status line of current window
-    StatusLineNC { fg = c.blue0 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    -- StatusLineNC { fg = c.blue0 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     -- TabLine      { }, -- tab pages line, not active tab page label
     -- TabLineFill  { }, -- tab pages line, where there are no labels
     -- TabLineSel   { }, -- tab pages line, active tab page label
-    Title        { fg = c.white, gui = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
-    Visual       { bg = c.blue4 }, -- Visual mode selection
+    Title        { fg = c.white1, gui = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
+    Visual       { bg = c.darkblue1 }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     -- WarningMsg   { }, -- warning messages
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
-    Constant       { fg =  c.black0 }, -- (preferred) any constant
-    String         { fg = c.purple3 }, --   a string constant: "this is a string"
+    Constant       { fg =  c.blue6, gui="italic" }, -- (preferred) any constant
+    String         { fg = c.cyan0 }, --   a string constant: "this is a string"
     -- String         { fg = c.green }, --   a string constant: "this is a string"
     -- Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
     Number         { fg = c.green }, --   a number constant: 234, 0xff
     Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
     -- Float          { fg = c.yellow0 }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = c.cyan1 }, -- (preferred) any variable name
+    Identifier     { fg = c.purple5 }, -- (preferred) any variable name
     Function       { fg = c.white1 }, -- function name (also: methods for classes)
 
-    -- Statement      { fg = c.brown0, gui = "bold" }, -- (preferred) any statement
-    Statement      { fg = "#757575", gui = "bold" }, -- (preferred) any statement
+    Statement      { fg = c.black1, gui = "bold" }, -- (preferred) any statement
+    -- Statement      { fg = "#666666", gui = "bold" }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.
     -- Operator       { fg = c.yellow }, -- "sizeof", "+", "*", etc.
     -- Keyword        {  fg = '#7D7D69', gui = "bold" }, --  any other keyword
     Keyword        {  fg = c.white1, gui = "bold" }, --  any other keyword
-    Exception      { fg = c.blue9 }, --  try, catch, throw
+    Exception      { fg = c.blue6 }, --  try, catch, throw
 
-    PreProc        { fg = c.brown0 }, -- (preferred) generic Preprocessor
-    -- Include        { }, --  preprocessor #include
+    PreProc        { fg = c.purple5 }, -- (preferred) generic Preprocessor
+    -- Include        { fg = c.black1 }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c.cyan1 }, -- (preferred) int, long, char, etc.
+    Type           { fg = c.purple5 }, -- (preferred) int, long, char, etc.
     -- Type           { fg = '#576B80' }, -- (preferred) int, long, char, etc.
     -- Type           { fg = c.white1 }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
@@ -139,15 +140,15 @@ local theme = lush(function()
     Special        { Statement }, -- (preferred) any special symbol
     -- Special        {  fg = '#7D7D69', gui = "bold"  }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
-    -- Tag            { }, --    you can use CTRL-] on this
-    Delimiter      { fg = c.blue9 }, --  character that needs attention
+    -- Tag            { fg = c.blue0 }, --    you can use CTRL-] on this
+    Delimiter      { fg = c.blue6 }, --  character that needs attention
     -- Delimiter      { fg = '#7D7D69' },
     -- SpecialComment { }, -- special things inside a comment
     -- Debug          { }, --    debugging statements
     htmlTag          { Delimiter }, --    debugging statements
     htmlEndTag       { Delimiter }, --    debugging statements
 
-    Underlined { fg = c.blue9, gui = "underline" }, -- (preferred) text that stands out, HTML links
+    Underlined { fg = c.blue6, gui = "underline" }, -- (preferred) text that stands out, HTML links
     -- Bold       { gui = "bold" },
     -- Italic     { gui = "italic" },
 
@@ -174,9 +175,9 @@ local theme = lush(function()
     -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
     --
     DiagnosticError            { ErrorMsg } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticWarn             { fg = c.blue9 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticHint             { fg = c.green5 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticWarn             { fg = c.blue9 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticHint             { fg = c.green5 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
