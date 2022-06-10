@@ -73,8 +73,8 @@ local theme = lush(function()
     -- MoreMsg      { }, -- |more-prompt|
     NonText      { fg = c.black0.da(35) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     -- Normal       { bg = '#1a202a', fg = c.white1  }, -- normal text
-    Normal       { bg = '#282c34', fg = c.white1  }, -- normal text
-    -- Normal       { bg = '#2a2a2a', fg = c.white1  }, -- normal text
+    -- Normal       { bg = '#282c34', fg = c.white1  }, -- normal text
+    Normal       { bg = '#2a2a2a', fg = c.white1  }, -- normal text
     -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
@@ -102,15 +102,15 @@ local theme = lush(function()
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
-    Constant       { fg =  c.blue6, gui="italic" }, -- (preferred) any constant
-    String         { fg = c.cyan0 }, --   a string constant: "this is a string"
+    Constant       { fg =  c.brown0 }, -- (preferred) any constant
+    String         { fg = '#A4988A' }, --   a string constant: "this is a string"
     -- String         { fg = c.green }, --   a string constant: "this is a string"
     -- Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
     Number         { fg = c.green }, --   a number constant: 234, 0xff
     Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
     -- Float          { fg = c.yellow0 }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = c.purple5 }, -- (preferred) any variable name
+    Identifier     { fg = c.blue0 }, -- (preferred) any variable name
     Function       { fg = c.white1 }, -- function name (also: methods for classes)
 
     Statement      { fg = c.black1, gui = "bold" }, -- (preferred) any statement
@@ -121,15 +121,15 @@ local theme = lush(function()
     -- Operator       { fg = c.yellow }, -- "sizeof", "+", "*", etc.
     -- Keyword        {  fg = '#7D7D69', gui = "bold" }, --  any other keyword
     Keyword        {  fg = c.white1, gui = "bold" }, --  any other keyword
-    Exception      { fg = c.blue6 }, --  try, catch, throw
+    Exception      { fg = c.purple3 }, --  try, catch, throw
 
-    PreProc        { fg = c.purple5 }, -- (preferred) generic Preprocessor
+    PreProc        { fg = c.blue0 }, -- (preferred) generic Preprocessor
     -- Include        { fg = c.black1 }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c.purple5 }, -- (preferred) int, long, char, etc.
+    Type           { fg = c.purple3 }, -- (preferred) int, long, char, etc.
     -- Type           { fg = '#576B80' }, -- (preferred) int, long, char, etc.
     -- Type           { fg = c.white1 }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
@@ -141,14 +141,14 @@ local theme = lush(function()
     -- Special        {  fg = '#7D7D69', gui = "bold"  }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { fg = c.blue0 }, --    you can use CTRL-] on this
-    Delimiter      { fg = c.blue6 }, --  character that needs attention
+    Delimiter      { fg = c.cyan1 }, --  character that needs attention
     -- Delimiter      { fg = '#7D7D69' },
     -- SpecialComment { }, -- special things inside a comment
     -- Debug          { }, --    debugging statements
     htmlTag          { Delimiter }, --    debugging statements
     htmlEndTag       { Delimiter }, --    debugging statements
 
-    Underlined { fg = c.blue6, gui = "underline" }, -- (preferred) text that stands out, HTML links
+    Underlined { fg = c.blue0, gui = "underline" }, -- (preferred) text that stands out, HTML links
     -- Bold       { gui = "bold" },
     -- Italic     { gui = "italic" },
 
