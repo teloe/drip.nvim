@@ -45,7 +45,7 @@ local theme = lush(function()
     -- Cursor       { }, -- character under the cursor
     -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
-    -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    -- CursorColumn { bg = c.black6 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = c.black1, gui = "bold" }, -- directory names (and other special names in listings)
     -- DiffAdd      { fg = c.green0 }, -- diff mode: Added line |diff.txt|
@@ -59,11 +59,11 @@ local theme = lush(function()
     -- VertSplit    { }, -- the column separating vertically split windows
     Folded       { bg = c.black3, fg = c.purple1 }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { fg = c.blue6 }, -- column where |signs| are displayed
+    SignColumn   { bg = c.black6, fg = c.blue6 }, -- column where |signs| are displayed
     IncSearch    { bg = c.blue2 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- LineNr       { fg = c.black }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    LineNr       { Comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr       { bg = c.black6, fg = '#586469' }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNr       { fg = c.black0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { bg = c.darkblue1 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -78,7 +78,7 @@ local theme = lush(function()
     -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { bg = c.black5 }, -- Popup menu: normal item.
+    Pmenu        { bg = c.black6 }, -- Popup menu: normal item.
     PmenuSel     { bg = c.darkblue1 }, -- Popup menu: selected item.
     PmenuSbar    { bg = c.black }, -- Popup menu: scrollbar.
     PmenuThumb   { fg = c.blue6 }, -- Popup menu: Thumb of the scrollbar.
@@ -102,18 +102,20 @@ local theme = lush(function()
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
-    Constant       { fg =  c.brown0 }, -- (preferred) any constant
-    String         { fg = '#A4988A' }, --   a string constant: "this is a string"
-    -- String         { fg = c.green }, --   a string constant: "this is a string"
+    Constant       { fg =  c.black1 }, -- (preferred) any constant
+    -- String         { fg = '#d7c970' }, --   a string constant: "this is a string"
+    -- String         { fg = '#A4988A' }, --   a string constant: "this is a string"
+    -- String         { fg = '#8e5c64' }, --   a string constant: "this is a string"
+    String         { fg = c.green1 }, --   a string constant: "this is a string"
     -- Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
     Number         { fg = c.green }, --   a number constant: 234, 0xff
     Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
     -- Float          { fg = c.yellow0 }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = c.blue0 }, -- (preferred) any variable name
+    Identifier     { fg = c.cyan1 }, -- (preferred) any variable name
     Function       { fg = c.white1 }, -- function name (also: methods for classes)
 
-    Statement      { fg = c.black1, gui = "bold" }, -- (preferred) any statement
+    Statement      { fg = c.black7, gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = "#666666", gui = "bold" }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
@@ -129,7 +131,7 @@ local theme = lush(function()
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c.purple3 }, -- (preferred) int, long, char, etc.
+    Type           { fg = c.cyan1 }, -- (preferred) int, long, char, etc.
     -- Type           { fg = '#576B80' }, -- (preferred) int, long, char, etc.
     -- Type           { fg = c.white1 }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
@@ -141,7 +143,7 @@ local theme = lush(function()
     -- Special        {  fg = '#7D7D69', gui = "bold"  }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { fg = c.blue0 }, --    you can use CTRL-] on this
-    Delimiter      { fg = c.cyan1 }, --  character that needs attention
+    Delimiter      { fg = c.blue0 }, --  character that needs attention
     -- Delimiter      { fg = '#7D7D69' },
     -- SpecialComment { }, -- special things inside a comment
     -- Debug          { }, --    debugging statements

@@ -6,6 +6,8 @@ return {
     black0 = hsl("#555753"),
     black1 = hsl("#8f8f8f"),
     black4 = hsl("#2F3436"),
+    black6 = "#24211F",
+    black7 = "#707070",
     white = hsl("#ffffff"),
     white0 = hsl("#EEEEEC"),
     white1 = hsl("#d6d6d6"),
@@ -19,7 +21,7 @@ return {
     yellow0 = hsl("#C4A000"),
     blue = hsl("#729FCF"),
     -- blue0 = hsl("#506090"),
-    -- blue0 = hsl("#6d7dae"),
+    -- blue0 = hsl("#647EC3"),
     blue0 = hsl("#7a88b5"),
     purple = hsl("#AD7FA8"),
     purple0 = hsl("#75507B"),
@@ -81,6 +83,7 @@ return {
     blue9 = '#576B80',
 
     red5 = '#C56C6C',
+    red6 = '#8e5c64',
     purple5 = '#9474a9',
     yellow2 = '#E2E060',
 
