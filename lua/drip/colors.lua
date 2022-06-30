@@ -36,6 +36,7 @@ return {
     green1 = hsl('#87875f'), -- String fg
     purple2 = hsl('#875f5f'), -- PreProc fg
     cyan1 = hsl('#87afaf'),
+    cyan2 = hsl('#8299ad'),
     blue6 = hsl('#5f87af'),
 
     -- nord
@@ -88,5 +89,55 @@ return {
     yellow2 = '#E2E060',
 
     black5 = '#343840',
+
+
+
+    -- seoul
+    bg = '#2a2a2a',
+    blu = '#ABC4DB',
+    blck = '#4b4b4b',
+    norm = '#dddddd', -- identifier,
+    commnt = '#719871',
+    conceal = '#969696',
+    const = '#A3A3A3',
+    del = '#9B9B9B',
+    hint = '#A5A6C5', -- nvimtreespecialfile
+    info = '#97BDDE', -- nvimtreerootfolder
+    err = '#E388A3', -- gitsignsd
+    warn = '#FFDF9B',
+    diffa = '#406742',
+    diffc = '#466177',
+    diffd = '#82505E',
+    difft = '#5D809B',
+    func = '#DFDFC1',
+    gitsignsa = '#98BD99', -- moremsg, 
+    gitsignsc = '#97BDDE',
+    keywrd = '#DC8CA3',
+    linenr = '#868686',
+    type = '#AEAEAE',
+    stmnt = '#0084A3',
+    fold = '#BBBBBB',
+    foldbg = '#636363',
+    nontxt = '#7C7C7C',
+    num = '#F7E0B3',
+    incsrch = '#DCDCE8', -- fg 4b4b4b
+    search = '#8283AD',
+    pmenu = '#5C5C5C',
+    pmenusb = '#818181',
+    pmenusel = '#6F6F6F',
+    pmenuthmb = '#A0A0A0',
+    preproc = '#D590A3',
+    red7 = '#AA8888',
+    purple6 = '#9696AC',
+
+    blue01 = '#6f93c8',
+
+
+
+
+
+
+
+
 
 }
