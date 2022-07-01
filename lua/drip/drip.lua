@@ -26,10 +26,9 @@ local theme = lush(function()
     -- Cursor       { }, -- character under the cursor
     -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
-    -- CursorColumn { bg = c.black6 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    -- Directory    { fg = c.black1, gui = "bold" }, -- directory names (and other special names in listings)
-    Directory    { fg = "none", gui = "none" }, -- directory names (and other special names in listings)
+    Directory    { fg = c.white2, gui = "bold" }, -- directory names (and other special names in listings)
     NvimTreeSpecialFile { fg = c.search, gui = "underline, bold" },
     -- DiffAdd      { fg = c.green0 }, -- diff mode: Added line |diff.txt|
     -- DiffChange   { fg = c.blue }, -- diff mode: Changed line |diff.txt|
@@ -39,14 +38,14 @@ local theme = lush(function()
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     ErrorMsg     { fg = c.red4 }, -- error messages on the command line
-    -- VertSplit    { }, -- the column separating vertically split windows
+    VertSplit    { fg = c.bg, bg = "none" }, -- the column separating vertically split windows
     Folded       { bg = c.black3, fg = c.purple1 }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { fg = c.blue6 }, -- column where |signs| are displayed
+    SignColumn   { bg = "none", fg = c.linenr }, -- column where |signs| are displayed
     IncSearch    { fg = c.blck, bg = c.incsrch }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- LineNr       { fg = c.black }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    LineNr       { fg = c.linenr }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr       { SignColumn }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNr       { fg = c.black0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { fg = c.norm, bg = c.darkblue1 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -85,22 +84,22 @@ local theme = lush(function()
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
-    Constant       { fg =  c.black1 }, -- (preferred) any constant
+    Constant       { fg =  '#5f8787' }, -- (preferred) any constant
     -- String         { fg = '#d7c970' }, --   a string constant: "this is a string"
     -- String         { fg = '#A4988A' }, --   a string constant: "this is a string"
     -- String         { fg = '#8e5c64' }, --   a string constant: "this is a string"
     String         { fg = c.search }, --   a string constant: "this is a string"
-    -- Character      { fg = c.blue1 }, --  a character constant: 'c', '\n'
+    -- Character      { }, --  a character constant: 'c', '\n'
     Number         { fg = c.green }, --   a number constant: 234, 0xff
     Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
-    -- Float          { fg = c.yellow0 }, --    a floating point constant: 2.3e10
+    -- Float          { }, --    a floating point constant: 2.3e10
 
     Identifier     { fg = c.black1 }, -- (preferred) any variable name
     -- Identifier     { fg = '#717F6C' }, -- (preferred) any variable name
     -- Function       { fg = '#7792C3' }, -- function name (also: methods for classes)
     Function       { fg = c.blue }, -- function name (also: methods for classes)
 
-    Statement      { fg = c.white1, gui = "bold" }, -- (preferred) any statement
+    Statement      { fg = '#5f8787', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = '#8E5C64', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = "#717F6C", gui = "bold" }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
@@ -119,7 +118,6 @@ local theme = lush(function()
 
     Type           { fg = c.black1 }, -- (preferred) int, long, char, etc.
     -- Type           { fg = '#576B80' }, -- (preferred) int, long, char, etc.
-    -- Type           { fg = c.white1 }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
@@ -128,7 +126,7 @@ local theme = lush(function()
     Special        { Statement }, -- (preferred) any special symbol
     -- Special        {  fg = '#7D7D69', gui = "bold"  }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
-    -- Tag            { fg = c.blue0 }, --    you can use CTRL-] on this
+    -- Tag            { }, --  you can use CTRL-] on this
     Delimiter      { fg = c.del }, --  character that needs attention
     -- Delimiter      { fg = '#7D7D69' },
     -- SpecialComment { }, -- special things inside a comment
@@ -163,9 +161,9 @@ local theme = lush(function()
     -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
     --
     DiagnosticError            { ErrorMsg } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticWarn             { fg = c.blue9 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticWarn             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticHint             { fg = c.green5 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticHint             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
@@ -211,7 +209,7 @@ local theme = lush(function()
     -- TSNamespace          { } , -- Identifiers referring to modules and namespaces.
     -- TSNone               { } , -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
     -- TSNumber             { } , -- Numeric literals that don't fit into other categories.
-    TSOperator           { fg = c.white } , -- Binary or unary operators: `+`, and also `->` and `*` in C.
+    TSOperator           { fg = c.white0 } , -- Binary or unary operators: `+`, and also `->` and `*` in C.
     -- TSParameter          { } , -- Parameters of a function.
     -- TSParameterReference { } , -- References to parameters of a function.
     -- TSProperty           { } , -- Same as `TSField`.
