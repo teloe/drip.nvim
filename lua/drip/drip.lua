@@ -18,8 +18,10 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
+    NvimTreeSpecialFile  { fg = c.search, gui = "underline, bold" },
+    NvimTreeNormal { bg = '#262626' },
 
-    Comment      { fg = '#586469' }, -- any comment
+    Comment      { fg = c.cmnt }, -- any comment
     -- Comment      { fg = c.commnt }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -29,7 +31,6 @@ local theme = lush(function()
     -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = c.white2, gui = "bold" }, -- directory names (and other special names in listings)
-    NvimTreeSpecialFile { fg = c.search, gui = "underline, bold" },
     -- DiffAdd      { fg = c.green0 }, -- diff mode: Added line |diff.txt|
     -- DiffChange   { fg = c.blue }, -- diff mode: Changed line |diff.txt|
     -- DiffDelete   { fg = c.red }, -- diff mode: Deleted line |diff.txt|
@@ -39,9 +40,9 @@ local theme = lush(function()
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     ErrorMsg     { fg = c.red4 }, -- error messages on the command line
     VertSplit    { fg = c.bg, bg = "none" }, -- the column separating vertically split windows
-    Folded       { bg = c.black3, fg = c.purple1 }, -- line used for closed folds
+    Folded       { bg = '#212121', fg = c.cmnt }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { bg = "none", fg = c.linenr }, -- column where |signs| are displayed
+    SignColumn   { bg = "none", fg = c.cmnt }, -- column where |signs| are displayed
     IncSearch    { fg = c.blck, bg = c.incsrch }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- LineNr       { fg = c.black }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -60,10 +61,10 @@ local theme = lush(function()
     -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { bg = c.blck }, -- Popup menu: normal item.
-    PmenuSel     { bg = c.pmenusel }, -- Popup menu: selected item.
-    PmenuSbar    { bg = c.pmenusb }, -- Popup menu: scrollbar.
-    PmenuThumb   { bg = c.pmenuthmb }, -- Popup menu: Thumb of the scrollbar.
+    Pmenu        { bg = '#212121' }, -- Popup menu: normal item.
+    PmenuSel     { bg = c.darkblue1 }, -- Popup menu: selected item.
+    PmenuSbar    { bg = '#212121' }, -- Popup menu: scrollbar.
+    PmenuThumb   { bg = c.blck }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { MatchParen }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
@@ -129,7 +130,7 @@ local theme = lush(function()
     -- Tag            { }, --  you can use CTRL-] on this
     Delimiter      { fg = c.del }, --  character that needs attention
     -- Delimiter      { fg = '#7D7D69' },
-    -- SpecialComment { }, -- special things inside a comment
+    SpecialComment { fg = c.blck }, -- special things inside a comment
     -- Debug          { }, --    debugging statements
     htmlTag          { Delimiter }, --    debugging statements
     htmlEndTag       { Delimiter }, --    debugging statements
@@ -163,7 +164,7 @@ local theme = lush(function()
     DiagnosticError            { ErrorMsg } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticWarn             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticHint             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticHint             { fg = c.difft, bg = '#262626' } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
