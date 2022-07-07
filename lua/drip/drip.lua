@@ -79,7 +79,7 @@ local theme = lush(function()
     -- TabLine      { }, -- tab pages line, not active tab page label
     -- TabLineFill  { }, -- tab pages line, where there are no labels
     -- TabLineSel   { }, -- tab pages line, active tab page label
-    Title        { fg = c.white1, gui = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
+    Title        { fg = c.white2, gui = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
     Visual       { bg = c.darkblue1 }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     -- WarningMsg   { }, -- warning messages
@@ -97,7 +97,7 @@ local theme = lush(function()
     Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
     -- Float          { }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = c.hitgray }, -- (preferred) any variable name
+    Identifier     { fg = c.white3 }, -- (preferred) any variable name
     -- Identifier     { fg = '#717F6C' }, -- (preferred) any variable name
     -- Function       { fg = '#7792C3' }, -- function name (also: methods for classes)
     Function       { fg = c.norm }, -- function name (also: methods for classes)

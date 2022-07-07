@@ -16,6 +16,8 @@ return {
     white3 = hsl("#b6b6b6"),
     hitgray = '#96a8b0',
     darkgreen = '#5f8787',
+    brown1 = '#A46321',
+
     -- red = hsl("#EF2929"),
     -- red0 = hsl("#CC0000"),
     -- red1 = hsl("#f0f0f0"),
