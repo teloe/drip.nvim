@@ -20,10 +20,10 @@ local theme = lush(function()
 
     NvimTreeSpecialFile  { fg = c.search, gui = "underline, bold" },
     -- NvimTreeNormal { bg = c.black0 },
-    CmpItemKind { fg = c.cmnt },
+    CmpItemKind { fg = c.blue },
 
-    -- Comment      { fg = c.cmnt }, -- any comment
-    Comment      { fg = '#888a85' }, -- any comment
+    Comment      { fg = c.commnt }, -- any comment
+    -- Comment      { fg = '#888a85' }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
@@ -62,9 +62,9 @@ local theme = lush(function()
     -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { bg = c.black, fg = c.white3 }, -- Popup menu: normal item.
-    PmenuSel     { bg = c.black2, fg = "none" }, -- Popup menu: selected item.
-    PmenuSbar    { bg = c.black2, fg = "none" }, -- Popup menu: scrollbar.
+    Pmenu        { bg = c.blck, fg = c.white2 }, -- Popup menu: normal item.
+    PmenuSel     { bg = c.black1, fg = "none" }, -- Popup menu: selected item.
+    PmenuSbar    { bg = c.black1, fg = "none" }, -- Popup menu: scrollbar.
     PmenuThumb   { bg = c.blck, fg = "none" }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
@@ -86,15 +86,15 @@ local theme = lush(function()
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
-    Constant       { fg =  c.darkgreen }, -- (preferred) any constant
+    Constant       { fg =  c.blue }, -- (preferred) any constant
     -- String         { fg = '#d7c970' }, --   a string constant: "this is a string"
     -- String         { fg = '#A4988A' }, --   a string constant: "this is a string"
     -- String         { fg = '#8e5c64' }, --   a string constant: "this is a string"
     String         { fg = c.search }, --   a string constant: "this is a string"
     -- String         { fg = c.search }, --   a string constant: "this is a string"
     -- Character      { }, --  a character constant: 'c', '\n'
-    Number         { fg = c.green }, --   a number constant: 234, 0xff
-    Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
+    Number         { fg = c.cyan }, --   a number constant: 234, 0xff
+    Boolean        { fg = c.cyan }, --  a boolean constant: TRUE, false
     -- Float          { }, --    a floating point constant: 2.3e10
 
     Identifier     { fg = c.white3 }, -- (preferred) any variable name
@@ -102,7 +102,7 @@ local theme = lush(function()
     -- Function       { fg = '#7792C3' }, -- function name (also: methods for classes)
     Function       { fg = c.norm }, -- function name (also: methods for classes)
 
-    Statement      { fg = c.black1, gui = "bold" }, -- (preferred) any statement
+    Statement      { fg = c.white2, gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = '#5f8787', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = '#8E5C64', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = "#717F6C", gui = "bold" }, -- (preferred) any statement
@@ -120,7 +120,7 @@ local theme = lush(function()
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c.blue }, -- (preferred) int, long, char, etc.
+    Type           { fg = c.black1 }, -- (preferred) int, long, char, etc.
     -- Type           { fg = '#576B80' }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.

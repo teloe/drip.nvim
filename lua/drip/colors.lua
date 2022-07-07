@@ -40,7 +40,7 @@ return {
     -- black2 = hsl('#262626'), -- Normal bg
     -- black3 = hsl('#202020'), -- Darkest black
     purple1 = hsl('#5f5f87'), -- Comment fg
-    -- green1 = hsl('#87875f'), -- String fg
+    green1 = hsl('#87875f'), -- String fg
     -- purple2 = hsl('#875f5f'), -- PreProc fg
     -- cyan1 = hsl('#87afaf'),
     -- cyan2 = hsl('#8299ad'),
@@ -81,7 +81,7 @@ return {
 
     -- red5 = '#C56C6C',
     -- red6 = '#8e5c64',
-    -- purple5 = '#9474a9',
+    purple = '#9474a9',
     -- yellow2 = '#E2E060',
 
     -- black5 = '#343840',
