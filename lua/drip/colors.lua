@@ -26,7 +26,8 @@ return {
     -- yellow = hsl("#FCE94F"),
     -- yellow0 = hsl("#C4A000"),
     -- blue = hsl("#729FCF"),
-    blue = hsl("#5f87af"),
+    -- blue = hsl("#5f87af"),
+    blue = hsl("#729fcf"),
     -- blue0 = hsl("#506090"),
     -- blue0 = hsl("#647EC3"),
     -- blue0 = hsl("#7a88b5"),
@@ -47,8 +48,8 @@ return {
 
 
     -- Eclipse Pastel colors
-    -- brown = hsl('#a57b61'), 
-    -- brown0 = '#93746F',
+    brown = hsl('#a57b61'), 
+    brown0 = '#93746F',
     -- blue1 = hsl('#7D8C93'),
     -- green3 = hsl('#617471'),
     -- blue2 = hsl('#2D4363'),

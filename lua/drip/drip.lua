@@ -19,11 +19,11 @@ local theme = lush(function()
     -- or leave them commented to apply vims default colouring or linking.
 
     NvimTreeSpecialFile  { fg = c.search, gui = "underline, bold" },
-    NvimTreeNormal { bg = c.black0 },
+    -- NvimTreeNormal { bg = c.black0 },
     CmpItemKind { fg = c.cmnt },
 
-    Comment      { fg = c.cmnt }, -- any comment
-    -- Comment      { fg = c.commnt }, -- any comment
+    -- Comment      { fg = c.cmnt }, -- any comment
+    Comment      { fg = '#888a85' }, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
@@ -47,7 +47,7 @@ local theme = lush(function()
     IncSearch    { fg = c.blck, bg = c.incsrch }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- LineNr       { fg = c.black }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    LineNr       { fg = c.blck }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr       { fg = '#555753' }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNr       { fg = c.black0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { fg = c.norm, bg = c.darkblue1 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -58,7 +58,7 @@ local theme = lush(function()
     NonText      { fg = c.blck }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     -- Normal       { bg = '#1a202a', fg = c.white1  }, -- normal text
     -- Normal       { bg = '#282c34', fg = c.white1  }, -- normal text
-    Normal       { fg = c.norm, bg = c.bg }, -- normal text
+    Normal       { fg = c.norm, bg = '#2e3436' }, -- normal text
     -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
@@ -102,7 +102,7 @@ local theme = lush(function()
     -- Function       { fg = '#7792C3' }, -- function name (also: methods for classes)
     Function       { fg = c.norm }, -- function name (also: methods for classes)
 
-    Statement      { fg = c.white1, gui = "bold" }, -- (preferred) any statement
+    Statement      { fg = c.black1, gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = '#5f8787', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = '#8E5C64', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = "#717F6C", gui = "bold" }, -- (preferred) any statement
@@ -114,13 +114,13 @@ local theme = lush(function()
     Keyword        {  fg = c.white1, gui = "bold" }, --  any other keyword
     Exception      { fg = c.cyan }, --  try, catch, throw
 
-    PreProc        { fg = c.hitgray }, -- (preferred) generic Preprocessor
+    PreProc        { fg = c.blue }, -- (preferred) generic Preprocessor
     -- Include        { fg = c.black1 }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c.cyan0 }, -- (preferred) int, long, char, etc.
+    Type           { fg = c.blue }, -- (preferred) int, long, char, etc.
     -- Type           { fg = '#576B80' }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
