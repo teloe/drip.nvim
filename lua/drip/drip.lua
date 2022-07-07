@@ -19,7 +19,8 @@ local theme = lush(function()
     -- or leave them commented to apply vims default colouring or linking.
 
     NvimTreeSpecialFile  { fg = c.search, gui = "underline, bold" },
-    NvimTreeNormal { bg = '#262626' },
+    NvimTreeNormal { bg = c.black0 },
+    CmpItemKind { fg = c.cmnt },
 
     Comment      { fg = c.cmnt }, -- any comment
     -- Comment      { fg = c.commnt }, -- any comment
@@ -40,13 +41,13 @@ local theme = lush(function()
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     ErrorMsg     { fg = c.red4 }, -- error messages on the command line
     VertSplit    { fg = c.bg, bg = "none" }, -- the column separating vertically split windows
-    Folded       { bg = '#212121', fg = c.cmnt }, -- line used for closed folds
+    Folded       { bg = c.black, fg = c.cmnt }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { bg = "none", fg = c.cmnt }, -- column where |signs| are displayed
+    SignColumn   { bg = "none" }, -- column where |signs| are displayed
     IncSearch    { fg = c.blck, bg = c.incsrch }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- LineNr       { fg = c.black }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    LineNr       { SignColumn }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr       { fg = c.blck }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNr       { fg = c.black0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { fg = c.norm, bg = c.darkblue1 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -61,10 +62,10 @@ local theme = lush(function()
     -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { bg = '#212121' }, -- Popup menu: normal item.
-    PmenuSel     { bg = c.darkblue1 }, -- Popup menu: selected item.
-    PmenuSbar    { bg = '#212121' }, -- Popup menu: scrollbar.
-    PmenuThumb   { bg = c.blck }, -- Popup menu: Thumb of the scrollbar.
+    Pmenu        { bg = c.black, fg = c.white3 }, -- Popup menu: normal item.
+    PmenuSel     { bg = c.black2, fg = "none" }, -- Popup menu: selected item.
+    PmenuSbar    { bg = c.black2, fg = "none" }, -- Popup menu: scrollbar.
+    PmenuThumb   { bg = c.blck, fg = "none" }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { MatchParen }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
@@ -85,22 +86,24 @@ local theme = lush(function()
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
-    Constant       { fg =  '#5f8787' }, -- (preferred) any constant
+    Constant       { fg =  c.darkgreen }, -- (preferred) any constant
     -- String         { fg = '#d7c970' }, --   a string constant: "this is a string"
     -- String         { fg = '#A4988A' }, --   a string constant: "this is a string"
     -- String         { fg = '#8e5c64' }, --   a string constant: "this is a string"
     String         { fg = c.search }, --   a string constant: "this is a string"
+    -- String         { fg = c.search }, --   a string constant: "this is a string"
     -- Character      { }, --  a character constant: 'c', '\n'
     Number         { fg = c.green }, --   a number constant: 234, 0xff
     Boolean        { fg = c.green }, --  a boolean constant: TRUE, false
     -- Float          { }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = c.black1 }, -- (preferred) any variable name
+    Identifier     { fg = c.hitgray }, -- (preferred) any variable name
     -- Identifier     { fg = '#717F6C' }, -- (preferred) any variable name
     -- Function       { fg = '#7792C3' }, -- function name (also: methods for classes)
-    Function       { fg = c.blue }, -- function name (also: methods for classes)
+    Function       { fg = c.hitgray }, -- function name (also: methods for classes)
 
-    Statement      { fg = '#5f8787', gui = "bold" }, -- (preferred) any statement
+    Statement      { fg = c.black1, gui = "bold" }, -- (preferred) any statement
+    -- Statement      { fg = '#5f8787', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = '#8E5C64', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = "#717F6C", gui = "bold" }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
@@ -108,16 +111,16 @@ local theme = lush(function()
     -- Label          { }, --    case, default, etc.
     -- Operator       { fg = c.yellow }, -- "sizeof", "+", "*", etc.
     -- Keyword        {  fg = '#7D7D69', gui = "bold" }, --  any other keyword
-    Keyword        {  fg = c.white1, gui = "bold" }, --  any other keyword
+    Keyword        {  fg = c.white2, gui = "bold" }, --  any other keyword
     Exception      { fg = c.cyan }, --  try, catch, throw
 
-    PreProc        { fg = c.type }, -- (preferred) generic Preprocessor
+    PreProc        { fg = c.hitgray }, -- (preferred) generic Preprocessor
     -- Include        { fg = c.black1 }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c.black1 }, -- (preferred) int, long, char, etc.
+    Type           { fg = c.darkgreen }, -- (preferred) int, long, char, etc.
     -- Type           { fg = '#576B80' }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
@@ -128,7 +131,7 @@ local theme = lush(function()
     -- Special        {  fg = '#7D7D69', gui = "bold"  }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --  you can use CTRL-] on this
-    Delimiter      { fg = c.del }, --  character that needs attention
+    Delimiter      { fg = c.white3}, --  character that needs attention
     -- Delimiter      { fg = '#7D7D69' },
     SpecialComment { fg = c.blck }, -- special things inside a comment
     -- Debug          { }, --    debugging statements
