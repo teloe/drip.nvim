@@ -31,7 +31,7 @@ return {
     -- purple = hsl("#AD7FA8"),
     -- purple0 = hsl("#75507B"),
     cyan = hsl("#34E2E2"),
-    -- cyan0 = hsl("#06989A"),
+    cyan0 = hsl("#06989A"),
 
     -- tumnus colors
     -- black2 = hsl('#262626'), -- Normal bg

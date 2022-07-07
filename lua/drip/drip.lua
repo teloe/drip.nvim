@@ -100,9 +100,9 @@ local theme = lush(function()
     Identifier     { fg = c.hitgray }, -- (preferred) any variable name
     -- Identifier     { fg = '#717F6C' }, -- (preferred) any variable name
     -- Function       { fg = '#7792C3' }, -- function name (also: methods for classes)
-    Function       { fg = c.hitgray }, -- function name (also: methods for classes)
+    Function       { fg = c.norm }, -- function name (also: methods for classes)
 
-    Statement      { fg = c.black1, gui = "bold" }, -- (preferred) any statement
+    Statement      { fg = c.white1, gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = '#5f8787', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = '#8E5C64', gui = "bold" }, -- (preferred) any statement
     -- Statement      { fg = "#717F6C", gui = "bold" }, -- (preferred) any statement
@@ -111,7 +111,7 @@ local theme = lush(function()
     -- Label          { }, --    case, default, etc.
     -- Operator       { fg = c.yellow }, -- "sizeof", "+", "*", etc.
     -- Keyword        {  fg = '#7D7D69', gui = "bold" }, --  any other keyword
-    Keyword        {  fg = c.white2, gui = "bold" }, --  any other keyword
+    Keyword        {  fg = c.white1, gui = "bold" }, --  any other keyword
     Exception      { fg = c.cyan }, --  try, catch, throw
 
     PreProc        { fg = c.hitgray }, -- (preferred) generic Preprocessor
@@ -120,7 +120,7 @@ local theme = lush(function()
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c.darkgreen }, -- (preferred) int, long, char, etc.
+    Type           { fg = c.cyan0 }, -- (preferred) int, long, char, etc.
     -- Type           { fg = '#576B80' }, -- (preferred) int, long, char, etc.
     -- StorageClass   { Type }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
