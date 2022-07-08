@@ -19,8 +19,16 @@ local theme = lush(function()
     -- or leave them commented to apply vims default colouring or linking.
 
     NvimTreeSpecialFile  { fg = c.search, gui = "underline, bold" },
-    -- NvimTreeNormal { bg = c.black0 },
-    CmpItemKind { fg = c.blue },
+    NvimTreeNormal { bg = '#373e41' },
+
+    GitSignsAdd     { fg = c.diffa },
+    GitGutterAdd    { GitSignsAdd },
+    GitSignsChange  { fg = c.diffc },
+    GitGutterChange { GitSignsChange },
+    GitSignsDelete  { fg = c.diffd },
+    GitGutterDelete { GitSignsDelete },
+
+    CmpItemKind { fg = c.white3 },
 
     Comment      { fg = c.commnt }, -- any comment
     -- Comment      { fg = '#888a85' }, -- any comment
@@ -62,10 +70,10 @@ local theme = lush(function()
     -- Normal       { bg = c.blue8, fg = c.white1  }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { bg = c.blck, fg = c.white2 }, -- Popup menu: normal item.
-    PmenuSel     { bg = c.black1, fg = "none" }, -- Popup menu: selected item.
-    PmenuSbar    { bg = c.black1, fg = "none" }, -- Popup menu: scrollbar.
-    PmenuThumb   { bg = c.blck, fg = "none" }, -- Popup menu: Thumb of the scrollbar.
+    Pmenu        { bg = c.blck, fg = c.white1 }, -- Popup menu: normal item.
+    PmenuSel     { bg = c.black7, fg = "none" }, -- Popup menu: selected item.
+    PmenuSbar    { bg = c.blck, fg = "none" }, -- Popup menu: scrollbar.
+    PmenuThumb   { bg = c.black7, fg = "none" }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { MatchParen }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
@@ -74,7 +82,7 @@ local theme = lush(function()
     -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    -- StatusLine   { }, -- status line of current window
+    StatusLine   { NvimTreeNormal }, -- status line of current window
     -- StatusLineNC { fg = c.blue0 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     -- TabLine      { }, -- tab pages line, not active tab page label
     -- TabLineFill  { }, -- tab pages line, where there are no labels

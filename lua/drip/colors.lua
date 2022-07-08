@@ -8,7 +8,7 @@ return {
     black2 = "#161616",
     -- black4 = hsl("#2F3436"),
     -- black6 = "#24211F",
-    black7 = "#707070",
+    black7 = "#5f5f5f",
     -- white = hsl("#ffffff"),
     white0 = hsl("#EEEEEC"),
     white1 = hsl("#d6d6d6"),
