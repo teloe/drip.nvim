@@ -52,7 +52,7 @@ local theme = lush(function()
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     ErrorMsg     { fg = c.red4 }, -- error messages on the command line
     VertSplit    { fg = c.bg, bg = "none" }, -- the column separating vertically split windows
-    Folded       { bg = c.black, fg = c.cmnt }, -- line used for closed folds
+    Folded       { bg = '#373e41', fg = c.commnt }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
     SignColumn   { bg = "none" }, -- column where |signs| are displayed
     IncSearch    { fg = c.blck, bg = c.incsrch }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -178,7 +178,7 @@ local theme = lush(function()
     DiagnosticError            { ErrorMsg } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticWarn             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticHint             { fg = c.difft, bg = '#262626' } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticHint             { fg = c.difft, bg = '#33383a' } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
